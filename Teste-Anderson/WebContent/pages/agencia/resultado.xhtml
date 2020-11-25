@@ -1,0 +1,419 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>Teste Citel</title>
+	<link href="../../resources/css/cssLogin.css" rel="stylesheet"
+		type="text/css" />
+
+	<link
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		rel="stylesheet" id="bootstrap-css" />
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script
+		src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script"
+		rel="stylesheet" />
+	<link
+		href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+		rel="stylesheet"
+		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+		crossorigin="anonymous" />
+</h:head>
+<h:body style="background:#ADD8E6;">
+	<h:form id="login">
+		<p:growl id="growl" showDetail="true" sticky="false" life="3000" />
+		<p:ajaxStatus onstart="PF('statusDialog').show()"
+			onsuccess="PF('statusDialog').hide()" />
+		<div align="center" style="margin-left: 30%;"> 
+			<p:dialog widgetVar="statusDialog" modal="true" draggable="false" style="margin-left:45%;margin-top:150px;font-size:20px;"
+				closable="false" resizable="false" showHeader="false">
+				<p:outputLabel value="Salvando.." />
+				<br />
+				<img src="../../resources/img/ajax-carregando.gif" style="" />
+			</p:dialog>
+		</div>
+		<div
+			style="width: 90%; margin-left: 5%; background: white; border-radius: 5px;">
+			<div style="margin-left: 5%; width: 90%;">
+				<br />
+				<h2 align="center" style="font-family: Arial;">RESULTADO</h2>
+				<hr />
+				<br /> <br />
+				<h5 style="font-family: Arial;">Números de Candidatos por
+					Estado</h5>
+				<hr />
+				<h:panelGrid columns="3" style="width:100%">
+					<h:panelGroup>
+						<h:outputLabel value="Acre: " style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.estados.ac}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<h:panelGroup>
+						<h:outputLabel value="Alagoas: " style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.estados.al}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<h:panelGroup>
+						<h:outputLabel value="Amapá: " style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.estados.ap}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<h:panelGroup>
+						<h:outputLabel value="Amazonas: " style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.estados.am}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<h:panelGroup>
+						<h:outputLabel value="Bahia: " style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.estados.ba}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<h:panelGroup>
+						<h:outputLabel value="Ceará: " style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.estados.ce}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<h:panelGroup>
+						<h:outputLabel value="Espírito Santo: " style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.estados.es}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<h:panelGroup>
+						<h:outputLabel value="Goiás: " style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.estados.go}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<h:panelGroup>
+						<h:outputLabel value="Maranhão: " style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.estados.ma}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<h:panelGroup>
+						<h:outputLabel value="Mato Grosso: " style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.estados.mt}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<h:panelGroup>
+						<h:outputLabel value="Mato Grosso do Sul: "
+							style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.estados.ms}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<h:panelGroup>
+						<h:outputLabel value="Minas Gerais: " style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.estados.mg}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<h:panelGroup>
+						<h:outputLabel value="Pará: " style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.estados.pa}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<h:panelGroup>
+						<h:outputLabel value="Paraíba: " style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.estados.pb}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<h:panelGroup>
+						<h:outputLabel value="Paraná: " style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.estados.pr}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<h:panelGroup>
+						<h:outputLabel value="Pernambuco: " style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.estados.pe}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<h:panelGroup>
+						<h:outputLabel value="Piauí: " style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.estados.pi}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<h:panelGroup>
+						<h:outputLabel value="Rio de Janeiro: " style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.estados.rj}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<h:panelGroup>
+						<h:outputLabel value="Rio Grande do Norte: "
+							style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.estados.rn}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<h:panelGroup>
+						<h:outputLabel value="Rio Grande do Sul: "
+							style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.estados.rs}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<h:panelGroup>
+						<h:outputLabel value="Rondônia: " style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.estados.ro}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<h:panelGroup>
+						<h:outputLabel value="Roraima: " style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.estados.rr}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<h:panelGroup>
+						<h:outputLabel value="Santa Catarina: " style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.estados.sc}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<h:panelGroup>
+						<h:outputLabel value="São Paulo: " style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.estados.sp}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<h:panelGroup>
+						<h:outputLabel value="Sergipe: " style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.estados.se}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<h:panelGroup>
+						<h:outputLabel value="Tocantins: " style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.estados.too}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<h:panelGroup>
+						<h:outputLabel value="Distrito Federal: "
+							style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.estados.df}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+				</h:panelGrid>
+
+				<br /> <br />
+				<h5 style="font-family: Arial;">Média - IMC</h5>
+				<hr />
+				<h:panelGrid columns="4" style="width:71%">
+					<h:panelGroup>
+						<h:outputLabel value="IMC até 10 anos: " style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.mediaImc10}"
+							style="margin-left:2%;">
+							<f:convertNumber pattern="##,###,###,###.##"
+								minFractionDigits="2" maxFractionDigits="2" />
+						</h:outputLabel>
+					</h:panelGroup>
+					<br />
+					<h:panelGroup>
+						<h:outputLabel value="IMC de 11 até 20 anos: "
+							style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.mediaImc20}"
+							style="margin-left:2%;">
+							<f:convertNumber pattern="##,###,###,###.##"
+								minFractionDigits="2" maxFractionDigits="2" />
+						</h:outputLabel>
+					</h:panelGroup>
+					<br />
+					<h:panelGroup>
+						<h:outputLabel value="IMC de 21 até 30 anos: "
+							style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.mediaImc30}"
+							style="margin-left:2%;">
+							<f:convertNumber pattern="##,###,###,###.##"
+								minFractionDigits="2" maxFractionDigits="2" />
+						</h:outputLabel>
+					</h:panelGroup>
+					<br />
+					<h:panelGroup>
+						<h:outputLabel value="IMC acima de 31 anos: "
+							style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.mediaImcMais}"
+							style="margin-left:2%;">
+							<f:convertNumber pattern="##,###,###,###.##"
+								minFractionDigits="2" maxFractionDigits="2" />
+						</h:outputLabel>
+					</h:panelGroup>
+				</h:panelGrid>
+				<br /> <br /> <br />
+				<h5 style="font-family: Arial;">Percentual de Obesos</h5>
+				<hr />
+				<h:panelGrid columns="4" style="width:69%">
+					<h:panelGroup>
+						<h:outputLabel value="Percentual de Homens: "
+							style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.percentualHomem}"
+							style="margin-left:2%;">
+							<f:convertNumber pattern="##,###,###,###.##"
+								minFractionDigits="2" maxFractionDigits="2" />
+						</h:outputLabel>
+					</h:panelGroup>
+					<br />
+					<h:panelGroup>
+						<h:outputLabel style="font-weight:bold;"
+							value="Total de Homens Obesos: " />
+						<h:outputLabel style="margin-left:2%;"
+							value="#{resultadoMB.totalHomem}" />
+					</h:panelGroup>
+					<br />
+					<h:panelGroup>
+						<h:outputLabel value="Percentual de Mulheres: "
+							style="font-weight:bold;" />
+						<h:outputLabel value="#{resultadoMB.percentualMulher}"
+							style="margin-left:2%;">
+							<f:convertNumber pattern="##,###,###,###.##"
+								minFractionDigits="2" maxFractionDigits="2" />
+						</h:outputLabel>
+					</h:panelGroup>
+					<br />
+					<h:panelGroup>
+						<h:outputLabel value="Total de Mulheres Obesas: "
+							style="font-weight:bold;" />
+						<h:outputLabel style="margin-left:2%;"
+							value="#{resultadoMB.totalMulher}" />
+					</h:panelGroup>
+				</h:panelGrid>
+				<br /> <br /> <br />
+				<h5 style="font-family: Arial;">Média de Idade por Tipo
+					Sanguíneo</h5>
+				<hr />
+				<h:panelGrid columns="4" style="width:69%">
+					<h:panelGroup>
+						<h:outputLabel style="font-weight:bold;"
+							value="Tipo Sanguíneo A+: " />
+						<h:outputLabel value="#{resultadoMB.idadeAMais}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<br />
+					<h:panelGroup>
+						<h:outputLabel style="font-weight:bold;"
+							value="Tipo Sanguíneo A-: " />
+						<h:outputLabel value="#{resultadoMB.idadeAMenos}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<br />
+					<h:panelGroup>
+						<h:outputLabel style="font-weight:bold;"
+							value="Tipo Sanguíneo B+: " />
+						<h:outputLabel value="#{resultadoMB.idadeBMais}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<br />
+					<h:panelGroup>
+						<h:outputLabel style="font-weight:bold;"
+							value="Tipo Sanguíneo B-: " />
+						<h:outputLabel value="#{resultadoMB.idadeBMenos}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<br />
+					<h:panelGroup>
+						<h:outputLabel style="font-weight:bold;"
+							value="Tipo Sanguíneo AB+: " />
+						<h:outputLabel value="#{resultadoMB.idadeABMais}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<br />
+					<h:panelGroup>
+						<h:outputLabel style="font-weight:bold;"
+							value="Tipo Sanguíneo AB-: " />
+						<h:outputLabel value="#{resultadoMB.idadeABMenos}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<br />
+					<h:panelGroup>
+						<h:outputLabel style="font-weight:bold;"
+							value="Tipo Sanguíneo O+: " />
+						<h:outputLabel value="#{resultadoMB.idadeOMais}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<br />
+					<h:panelGroup>
+						<h:outputLabel style="font-weight:bold;"
+							value="Tipo Sanguíneo O-: " />
+						<h:outputLabel value="#{resultadoMB.idadeOMenos}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+				</h:panelGrid>
+				<br /> <br /> <br />
+				<h5 style="font-family: Arial;">Possiveis Doadores por Tipo
+					Sanguíneo</h5>
+				<hr />
+				<h:panelGrid columns="4" style="width:69%">
+					<h:panelGroup>
+						<h:outputLabel style="font-weight:bold;"
+							value="Doadores Sanguíneo A+: " />
+						<h:outputLabel value="#{resultadoMB.nDoadorAMais}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<br />
+					<h:panelGroup>
+						<h:outputLabel style="font-weight:bold;"
+							value="Doadores Sanguíneo A-: " />
+						<h:outputLabel value="#{resultadoMB.nDoadorAMenos}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<br />
+					<h:panelGroup>
+						<h:outputLabel style="font-weight:bold;"
+							value="Doadores Sanguíneo B+: " />
+						<h:outputLabel value="#{resultadoMB.nDoadorBMais}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<br />
+					<h:panelGroup>
+						<h:outputLabel style="font-weight:bold;"
+							value="Doadores Sanguíneo B-: " />
+						<h:outputLabel value="#{resultadoMB.nDoadorBMenos}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<br />
+					<h:panelGroup>
+						<h:outputLabel style="font-weight:bold;"
+							value="Doadores Sanguíneo AB+: " />
+						<h:outputLabel value="#{resultadoMB.nDoadorABMais}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<br />
+					<h:panelGroup>
+						<h:outputLabel style="font-weight:bold;"
+							value="Doadores Sanguíneo AB-: " />
+						<h:outputLabel value="#{resultadoMB.nDoadorABMenos}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<br />
+					<h:panelGroup>
+						<h:outputLabel style="font-weight:bold;"
+							value="Doadores Sanguíneo O+: " />
+						<h:outputLabel value="#{resultadoMB.nDoadorOMais}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+					<br />
+					<h:panelGroup>
+						<h:outputLabel style="font-weight:bold;"
+							value="Doadores Sanguíneo O-: " />
+						<h:outputLabel value="#{resultadoMB.nDoadorOMenos}"
+							style="margin-left:2%;" />
+					</h:panelGroup>
+				</h:panelGrid>
+
+				<br />
+				<hr />
+				<br />
+				<div align="center">
+					<p:commandLink action="#{resultadoMB.refazer()}" ajax="false"
+						styleClass="btn btn-danger" value="Refazer"
+						style="font-size:20px;" />
+					<p:commandLink action="#{resultadoMB.salvarResultado()}"
+						onclick="PF('statusDialog').show()"
+						onsuccess="PF('statusDialog').hide()" ajax="false"
+						styleClass="btn btn-primary" value="Salvar Resultado"
+						style="font-size:20px;margin-left:2%;" update="growl" />
+				</div>
+				<br />
+			</div>
+		</div>
+	</h:form>
+</h:body>
+</html>
