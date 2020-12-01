@@ -6,9 +6,9 @@
 		<class>br.com.testecitel.Model.Resultado</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/testecitel?useTimezone=true&amp;serverTimezone=UTC"/>
-			<property name="javax.persistence.jdbc.user" value="local"/>
-			<property name="javax.persistence.jdbc.password" value="780920**"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/revisaov_testecitel?useTimezone=true&amp;serverTimezone=UTC"/>
+			<property name="javax.persistence.jdbc.user" value="revisaov_root"/>
+			<property name="javax.persistence.jdbc.password" value="780920**Revisao"/>
 		</properties>
 	</persistence-unit>
 </persistence>
